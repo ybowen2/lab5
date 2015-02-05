@@ -5,7 +5,9 @@
 	<title>My HCI Friends</title>	
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
+	<link rel="stylesheet" type="text/css" href="css/hci-friends.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -16,6 +18,8 @@
 </head>
 
 <body>
+
+	<div class="container">
 	<h1>My HCI Friends</h1>
 
 	<form id="addFriendForm" role="form" method="get" action="/add">
@@ -30,5 +34,20 @@
 	    </div>
 	    <input type="submit" id="submitBtn" class="btn btn-default" value="Add the friend"></input>
 	</form>
+{{#each friends}}
+	<div class = "friend" id = "{{id}}">
+		<img src="{{imageURL}}" class = "img-responsive">
+		
+	  <a href="#">
+		<h3 id="friendname">{{name}}</h3>
+     	</a>
+		<p>{{description}}</p>
+	</div>
+	<hr>
+ {{/each}}
+</div>
+	<script type="text/javascript" src = "js/jquery-1.11.0.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript" src= "js/hci-friends.js"></script>
 </body>
 </html>
